@@ -28,7 +28,7 @@ export class ApiServiceService {
   name!: string;
   mobile!: number;
 
-  private url!: string;
+  private url: string="https://rudra-enterprise.onrender.com";
 
   private signup_url=this.url+"/system/signup";
   private login_url=this.url+"/system/login";
