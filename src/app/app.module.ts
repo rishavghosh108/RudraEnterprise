@@ -81,4 +81,8 @@ import { PurchesInvoiceComponent } from './purches-invoice/purches-invoice.compo
   providers: [ApiServiceService,AuthService,CookieService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private api: ApiServiceService) {
+    api.url = environment.url;
+  }
+}
