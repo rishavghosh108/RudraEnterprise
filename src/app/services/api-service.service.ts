@@ -28,8 +28,7 @@ export class ApiServiceService {
   name!: string;
   mobile!: number;
 
-  private url: String="http://localhost:7755"
-  // private url: String="https://bi-97zo.onrender.com"
+  private url!: string;
 
   private signup_url=this.url+"/system/signup";
   private login_url=this.url+"/system/login";
