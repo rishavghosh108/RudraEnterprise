@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
 import { ApiServiceService } from './services/api-service.service';
 import { AuthService } from './services/auth.service';
 import { CookieService } from 'ngx-cookie-service';
@@ -82,7 +83,5 @@ import { PurchesInvoiceComponent } from './purches-invoice/purches-invoice.compo
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(private api: ApiServiceService) {
-    api.url = environment.url;
-  }
+
 }
