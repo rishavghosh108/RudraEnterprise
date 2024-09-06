@@ -1,0 +1,28 @@
+<app-hometemplate></app-hometemplate>
+<div class="body" *ngIf="!invoice_state">
+  <div class="allcard">
+    <div
+      class="card"
+      *ngFor="let product of products"
+      (click)="ChangeState({ id: product.id, date: product.date })"
+    >
+      <div class="cards">
+        <div class="card-header">
+          <h4>
+            <label><i class="fas fa-calendar-alt"></i> Date:</label>
+            <span>{{ product.date | date : "mediumDate" }}</span>
+          </h4>
+        </div>
+        <div class="card-body">
+          <div class="card-detail">
+            <label><i class="fas fa-cube"></i> Invoice No:</label>
+            <span>{{ product.id }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="body" *ngIf="invoice_state">
+  <app-purches-invoice [Date_id]="product_id"></app-purches-invoice>
+</div>

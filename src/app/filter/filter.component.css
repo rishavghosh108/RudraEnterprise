@@ -1,0 +1,220 @@
+.body {
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(130deg, #5fdfff, #feb47b);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: black;
+}
+
+mat-form-field{
+  width: 70%;
+}
+
+.form1 {
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.form2 {
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.form3 {
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.form4 {
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.form-group {
+  margin-bottom: 30px;
+}
+
+label {
+  padding-bottom: 4%;
+  padding-left: 4%;
+  float: left;
+  font-weight: bold;
+  color: #333333;
+  font-size: 1.1rem;
+}
+
+.custom-date {
+  width: 94%;
+  padding: 10px;
+  /* padding: 12px 15px; */
+  font-size: 1.1rem;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: linear-gradient(to left, #5fdfff, #feb47b); /* Gradient background */
+  color: #ffffff;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  appearance: none; /* Remove default browser styles */
+  background-clip: padding-box;
+}
+
+.custom-date:focus {
+  border-color: #5fdfff; /* Change border color on focus */
+  outline: none;
+  box-shadow: 0 0 8px rgba(95, 223, 255, 0.6); /* Add glow effect */
+}
+
+.span span {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.btn-custom {
+  background: linear-gradient(130deg, #5fdfff, #feb47b);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.btn-custom:hover {
+  box-shadow: 20px 20px rgba(10, 10, 10, 10);
+  transform: scale(1.01);
+  background: linear-gradient(130deg, #feb47b, #5fdfff); /* Reverse gradient */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Add shadow on hover */
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* .form-container {
+  width: 100%;
+  max-width: 500px; */
+  /* margin: 20px; */
+  /* padding: 20px; *
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+
+.form-group {
+   margin-bottom: 20px;
+  text-align: left;
+  background-color: red;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  background-color: black;
+}
+
+input{
+  width: 100%;
+  background-color: yellow;
+}
+
+.custom-date {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.custom-date:focus {
+  border-color: #5fdfff;
+  box-shadow: 0 0 8px rgba(95, 223, 255, 0.5);
+}
+
+.btn-custom {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(130deg, #5fdfff, #feb47b);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-custom:hover {
+  background-color: #008fcc;
+  box-shadow: 0 4px 8px rgba(0, 143, 204, 0.3);
+}
+
+.span {
+  color: red;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .form-container {
+    padding: 15px;
+  }
+
+  .btn-custom {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+} */

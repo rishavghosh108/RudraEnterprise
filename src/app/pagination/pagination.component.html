@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="center">
+        <div class="pages">
+            <button class="btn" [class.disable]="currentPage===1" (click)="PageChange(currentPage-1)"
+                [disabled]="currentPage===1">previous</button>
+            <div *ngFor="let i of pages" class="tab" [class.currentPage]="currentPage===i" (click)="PageChange(i)">{{i}}</div>
+            <button class="btn" [class.disable]="currentPage===pages.length" (click)="PageChange(currentPage+1)"
+                [disabled]="currentPage===pages.length">next</button>
+        </div>
+
+        <div class="relative" (click)="toggleDropdown()">
+            <button
+                class="nav-button">
+                Items per page: {{ perPage }}
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                    fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M10 12a1 1 0 01-.707-.293l-4-4a1 1 0 111.414-1.414L10 9.586l3.293-3.293a1 1 0 111.414 1.414l-4 4A1 1 0 0110 12z"
+                        clip-rule="evenodd" />
+                </svg>
+            </button>
+            <div *ngIf="isDropdownOpen" class="dropdown-container">
+                <div>
+                    <div class="dropdown-item"
+                        (click)="onChangePageSize(10);">10</div>
+                    <div class="dropdown-item"
+                        (click)="onChangePageSize(20);">20</div>
+                    <div class="dropdown-item"
+                        (click)="onChangePageSize(50);">50</div>
+                    <div class="dropdown-item"
+                        (click)="onChangePageSize(100);">100</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{totalPages.length}}

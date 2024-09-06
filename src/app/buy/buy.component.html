@@ -1,0 +1,91 @@
+<div class="main">
+  <div class="header">
+    <app-hometemplate></app-hometemplate>
+  </div>
+  <div class="first" *ngIf="empty_products > 0">
+    <div class="body" *ngIf="!cart">
+      <div class="product_body">
+        <div class="thbg">
+          <div class="th">
+            <div class="name">product name</div>
+            <div>volume</div>
+            <div>qty</div>
+            <div></div>
+          </div>
+        </div>
+
+        <div class="products">
+          <div class="tr" *ngFor="let product of products; let i = index">
+            <div class="product_name">{{ product["product_name"] }}</div>
+            <div class="volume">
+              <input
+                type="number"
+                required
+                placeholder="volume"
+                [(ngModel)]="volume[i]"
+                (input)="onInputChange($event)"
+                (keypress)="onKeyPress($event)"
+              />
+              &nbsp;&nbsp;&nbsp;
+              <div>{{ product["type"] }}</div>
+            </div>
+            <div>
+              <input
+                type="number"
+                required
+                placeholder="no of product"
+                [(ngModel)]="quantity[i]"
+                (input)="onInputChange($event)"
+                (keypress)="onKeyPress($event)"
+              />
+            </div>
+            <div>
+              <button
+                (click)="
+                  AddToCart(
+                    product['id'],
+                    product['product_name'],
+                    volume[i],
+                    product['type'],
+                    quantity[i],
+                    i
+                  )
+                "
+                [disabled]="!volume[i] || !quantity[i]"
+              >
+                add
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cartbtn">
+        <div class="cart">
+          <div class="swap">
+            <div>
+              <img
+                src="../../assets/cart_logo.png"
+                alt="cart"
+                (click)="goToCart()" [class.background]="tran"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cartitems" *ngIf="cart">
+      <app-cart
+        (backbutton)="Back($event)"
+        (isSuccess)="Success($event)"
+        (item)="deleteById($event)"
+        [cartvalues]="CartValues"
+        [buyvalues]="BuyValues"
+      ></app-cart>
+    </div>
+  </div>
+  <div class="second" *ngIf="empty_products === 0">
+    <app-emptyproduct></app-emptyproduct>
+  </div>
+</div>

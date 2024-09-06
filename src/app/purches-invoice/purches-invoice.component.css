@@ -1,0 +1,138 @@
+.invoice-card {
+  background: linear-gradient(130deg, #5fdfff, #feb47b);
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  max-height: 70vh;
+  overflow: hidden;
+}
+
+.invoice-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.invoice-header {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.invoice-header h4 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.invoice-body {
+  padding: 10px;
+  height: 54vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #feb47b #5fdfff;
+}
+
+.invoice-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.invoice-body::-webkit-scrollbar-track {
+  background: #5fdfff;
+}
+
+.invoice-body::-webkit-scrollbar-thumb {
+  background-color: #feb47b;
+  border-radius: 10px;
+  border: 2px solid #5fdfff;
+}
+
+.product-detail {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.product-detail:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-name {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.product-name label {
+  color: black;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+.info-item {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.info-item label {
+  font-weight: bold;
+  /* color: #5fdfff; */
+  color: #536493;
+}
+
+.info-item i {
+  margin-right: 5px;
+  color: #ffd700;
+}
+
+.info-item span {
+  color: #ffffff;
+}
+
+.buttondiv {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  font-size: 17px;
+  font-family: 'Poppins', sans-serif;
+  padding: 8px 20px;
+  background: linear-gradient(130deg, #feb47b, #5fdfff);
+  color: white;
+  border-radius: 25px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(130deg, #5fdfff, #feb47b); /* Reverse gradient */
+}

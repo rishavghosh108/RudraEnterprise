@@ -1,0 +1,84 @@
+.body{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.allcard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Space between cards */
+  width: 100vw;
+  height: 70vh;
+  padding: 20px;
+  align-items: center;
+  overflow-y: scroll;
+  margin-top: 2.8%;
+}
+
+.card {
+  background: linear-gradient(130deg, #5fdfff, #feb47b);
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  width: 350px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin: 20px;
+  color: black;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+}
+
+.card-header {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.card-header h4 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.card-detail label {
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.card-detail label i {
+  margin-right: 8px;
+  color: #ffd700;
+}
+
+.card-detail span {
+  color: white;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.cards {
+  margin: 10px 0;
+}

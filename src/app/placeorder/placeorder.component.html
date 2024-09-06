@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="placeorder.component.css">
+<div class="main">
+    <div class="container">
+        <table>
+            <thead>
+                <tr><th class="none">ID</th> <th>Product Name</th> <th>Volume</th> <th>Quantity</th></tr>
+            </thead>
+            <tbody *ngFor="let item of cartvalues">
+                <tr><td class="none">{{item['id']}}</td><td>{{GetProductById(item['id'])}}</td><td>{{item['volume']}}</td><td>{{item['qty']}}</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <button class="submit-button" (click)="Submit()">Submit</button>
+</div>

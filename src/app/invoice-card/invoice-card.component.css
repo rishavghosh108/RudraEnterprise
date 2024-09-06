@@ -1,0 +1,234 @@
+.body{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Space between cards */
+  width: 100vw;
+  height: 70vh;
+  padding: 20px;
+  align-items: center;
+  overflow-y: scroll;
+  margin-top: 2.8%;
+}
+
+.products {
+  background: linear-gradient(130deg, #5fdfff, #feb47b);
+  border-radius: 15px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  max-width: 350px;
+  width: 100%;
+  height: 220px;
+  margin: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.products:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+}
+
+.card-header {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  color: #333;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-detail label {
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.card-detail label i {
+  margin-right: 8px;
+  color: #ffd700;
+}
+
+.card-detail span {
+  color: white;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+
+
+.body1{
+  margin-top: 3vh;
+  height: 75vh;
+  overflow-y: scroll;
+}
+.invoice-card {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 40px;
+  max-width: 900px;
+  margin: 40px auto;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.invoice-header {
+  margin-bottom: 30px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.img {
+  position: absolute;
+  left: 0;
+}
+
+.logo_img {
+  height: 70px;
+}
+
+.heading h1 {
+  color: #333;
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: 80px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.invoice-details1, .invoice-details {
+  width: 48%;
+  font-size: 14px;
+}
+
+.client-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.client-address {
+  margin-bottom: 15px;
+}
+
+.invoice-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.invoice-body th {
+  background-color: #ffba00;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 12px;
+}
+
+.invoice-body td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.invoice-body tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.invoice-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 30px;
+  border-top: 2px solid #ccc;
+  padding-top: 20px;
+}
+
+.payment {
+  width: 50%;
+  font-size: 16px;
+}
+
+.payment p {
+  margin: 5px 0;
+}
+
+.authorized-sign {
+  text-align: right;
+  font-size: 16px;
+  width: 50%;
+}
+
+.authorized-sign p {
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+}
+
+@media print {
+  button {
+    display: none;
+  }
+}
+.download{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.download button{
+  color: black;
+  font-family: Arial Rounded MT Bold;
+  font-size: 15px;
+  padding: 7px 20px;
+  border-radius: 20px;
+  background: linear-gradient(130deg, #5fdfff, #feb47b);
+  cursor: pointer;
+}

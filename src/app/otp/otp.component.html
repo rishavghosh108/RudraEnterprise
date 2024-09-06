@@ -1,0 +1,24 @@
+<app-logo></app-logo>
+<div class="main">
+  <div class="otp-box">
+    <div class="img"><img src="../../assets/otp.png"></div>
+    <form class="form" [formGroup]="Otp" (ngSubmit)="Submit()">
+
+      <div class="title">Verification Code</div>
+      <p class="message">We have sent a verification code to your email address</p>
+
+      <div class="inputs"> 
+        <input id="input1" type="number" maxlength="1" formControlName="input1" (input)="moveToNext($event, 2)"> 
+        <input id="input2" type="number" maxlength="1" formControlName="input2" (input)="moveToNext($event, 3)">
+        <input id="input3" type="number" maxlength="1" formControlName="input3" (input)="moveToNext($event, 4)">
+        <input id="input4" type="number" maxlength="1" formControlName="input4" (input)="moveToNext($event, 5)"> 
+        <input id="input5" type="number" maxlength="1" formControlName="input5" (input)="moveToNext($event, 6)"> 
+        <input id="input6" type="number" maxlength="1" formControlName="input6"> 
+      </div>
+
+      <div class="otp">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

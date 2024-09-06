@@ -1,0 +1,132 @@
+<div class="alt" *ngIf="products?.length==0">
+<app-hometemplate></app-hometemplate>
+<div class="body">
+
+  <div class="container">
+
+    <h1 class="title">Choose an Option</h1>
+
+    <mat-form-field>
+      <mat-select [(value)]="selected">
+        <mat-option>None</mat-option>
+        <mat-option value="1">Filter by Date Range</mat-option>
+        <mat-option value="2">Filter by mobile no on specific date</mat-option>
+        <mat-option value="3">Filter by mobile no</mat-option>
+        <mat-option value="4">Filter by specific date</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+      <div class="form1" *ngIf="selected == 1">
+        <form class="date-form" [formGroup]="Date_range" (ngSubmit)="Submit_Date_range()">
+          <div class="form-group">
+            <label for="start-date">Start Date:</label>
+            <div class="span">
+              <span *ngIf="start_date_error">please select a valid date</span>
+            </div>
+            <input id="start-date" type="date" class="form-control custom-date" formControlName="start_date" [max]="today" (change)="onStartDateChange($event)"/>
+          </div>
+          <div class="form-group">
+            <label for="end-date">End Date:</label>
+            <div class="span">
+              <span *ngIf="end_date_error">please select a valid date</span>
+            </div>
+            <input id="end-date" type="date" class="form-control custom-date" formControlName="end_date" [min]="endDate"[max]="today" [disabled]="!startDate"/>
+          </div>
+          <div class="button">
+            <button type="submit" class="btn-custom">Search</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="form2" *ngIf="selected == 2">
+        <form
+          class="date-form"
+          [formGroup]="Mobile_Specific"
+          (ngSubmit)="Submit_Mobile_Specific()"
+        >
+          <div class="form-group">
+            <label for="mobile">Mobile:</label>
+            <div class="span">
+              <span *ngIf="mobile_error">please enter a valid mobile no</span>
+            </div>
+            <input
+              id="mobile"
+              type="number"
+              class="form-control custom-date"
+              placeholder="customer mobile no"
+              formControlName="mobile"
+            />
+          </div>
+          <div class="form-group">
+            <label for="specific-date">Date:</label>
+            <div class="span">
+              <span *ngIf="specific_date_error">please select a valid date</span>
+            </div>
+            <input
+              id="specific-date"
+              type="date"
+              class="form-control custom-date"
+              formControlName="specificDate"
+            />
+          </div>
+          <div class="button">
+            <button type="submit" class="btn-custom">Search</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="form3" *ngIf="selected == 3">
+        <form
+          class="date-form"
+          [formGroup]="Mobile_no"
+          (ngSubmit)="Submit_Mobile_no()"
+        >
+          <div class="form-group">
+            <label for="mobile">Mobile:</label>
+            <div class="span">
+              <span *ngIf="mobile_error">please enter a valid mobile no</span>
+            </div>
+            <input
+              id="mobile"
+              type="number"
+              class="form-control custom-date"
+              placeholder="customer mobile no"
+              formControlName="mobile"
+            />
+          </div>
+          <div class="button">
+            <button type="submit" class="btn-custom">Search</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="form4" *ngIf="selected == 4">
+        <form
+          class="date-form"
+          [formGroup]="Specific_Date"
+          (ngSubmit)="Submit_Specific_Date()"
+        >
+          <div class="form-group">
+            <label for="specific-date">Date:</label>
+            <div class="span">
+              <span *ngIf="specific_date_error">please select a valid date</span>
+            </div>
+            <input
+              id="specific-date"
+              type="date"
+              class="form-control custom-date"
+              formControlName="specificDate"
+            />
+          </div>
+          <div class="button">
+            <button type="submit" class="btn-custom">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div *ngIf="products && products.length > 0">
+  <app-invoice-card [transactions]="products"></app-invoice-card>
+</div>

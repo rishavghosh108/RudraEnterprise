@@ -1,0 +1,54 @@
+<div class="main">
+    <app-hometemplate></app-hometemplate>
+
+    <div class="first" *ngIf="empty_products > 0">
+
+    <div class="body" *ngIf="!cart">
+
+        <div class="product_body">
+
+            <div class="thbg">
+                <div class="th">
+                    <div class="name">product name</div>
+                    <div class="volume">volume</div>
+                    <div class="quantity">available quantity</div>
+                    <div class="required_quantity">required quantity</div>
+                    <div></div>
+                </div>
+            </div>
+
+
+            <div class="products">
+                <div class="tr" *ngFor="let product of products, let i = index">
+                    <div class="name_value">{{product['product_name']}}</div>
+                    <div class="volume">{{product['volume']}} {{product['type']}}</div>
+                    <div>{{product['qty']}}</div>
+                    <div><input type="number" required placeholder="no of product" [(ngModel)]="quantity[i]"
+                            (input)="onInputChange($event)" (keypress)="onKeyPress($event)"></div>
+                    <div><button
+                            (click)="AddToCart(product['id'], product['product_name'],product['volume'],product['type'],quantity[i],i)"
+                            [disabled]="!quantity[i]">add</button></div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="cartbtn">
+            <div class="cart">
+                <div class="swap">
+                    <img src="../../assets/cart_logo.png" alt="cart" (click)="goToCart()"  [class.background]="tran">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <div class="cartitems" *ngIf="cart">
+        <app-cart (backbutton)="Back($event)" (isSuccess)="Success($event)" (item)="deleteById($event)" [cartvalues]="CartValues" [buyvalues]="BuyValues" [type]="false"></app-cart>
+    </div>
+    <div class="second" *ngIf="empty_products === 0">
+        <app-emptyproduct></app-emptyproduct>
+    </div>
+
+</div>

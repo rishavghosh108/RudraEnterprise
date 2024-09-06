@@ -1,0 +1,29 @@
+<app-logo></app-logo>
+<div class="main">
+    <div class="body">
+        <div class="logo">
+            <img src="../../assets/profile.png" alt="profile logo" class="forget">
+        </div>
+        <form class="form" [formGroup]="forget" (ngSubmit)="submit()">
+            <div class="section">
+                <div>Username: &nbsp;</div>
+                <div *ngIf="forget.get('mobile')?.invalid && forget.get('mobile')?.touched||mobile" class="span">Please enter your mobile no</div>
+                <input type="number" placeholder="mobile" formControlName="mobile" [style.border-bottom-color]="forget.get('mobile')?.invalid && forget.get('mobile')?.touched||mobile ? 'red' : 'initial'" (input)="onInputChange_Mobile(forget.get('mobile')?.valid)">
+            </div>
+            <br>
+            <div class="section">
+                <div>Password: &nbsp;</div>
+                <div *ngIf="forget.get('password')?.invalid && forget.get('password')?.touched||password" class="span">Please enter a valid new password</div>
+                <input type="password" placeholder="Password" formControlName="password" [style.border-bottom-color]="forget.get('password')?.invalid && forget.get('password')?.touched||password ? 'red' : 'initial'" (input)="onInputChange_Password(forget.get('password')?.valid)">
+            </div>
+            <div class="forget_button">
+                <button type="submit">Submit</button>
+            </div>
+            <div class="other">
+                <p (click)="SwitchToLogin()" class="exist">Back To Login</p>
+            </div>
+            
+            <br>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+.body {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.main {
+    height: 40vh;
+    width: 30vw;
+    background: linear-gradient(130deg, #5fdfff, #feb47b);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.profilepic {
+    width: 30%;
+    border-radius: 50%;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.profilepic:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.name {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 15px;
+}
+
+.mobile {
+    font-size: 20px;
+    color: #f9f9f9;
+    margin-top: 5px;
+}
+
+.logout {
+    margin-top: auto;
+    margin-bottom: 15px;
+}
+
+.logout button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 17px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logout button:hover {
+    background-color: #45a049;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,43 @@
+<div class="contain" *ngIf="temp">
+    <div class="body">
+        <div *ngIf="cartType" class="main">
+            <h1>Cart Items</h1>
+            <div class="header">
+                <div class="column1">Product Name</div>
+                <div class="column2">Volume</div>
+                <div class="column2">Quantity</div>
+                <div class="column2"></div>
+            </div>
+            <div class="products">
+                <div class="tr" *ngFor="let item of cartvalues">
+                    <div class="column1">{{ item['name'] }}</div>
+                    <div class="column2">{{ item['volume'] }} &nbsp;{{ item['type'] }}</div>
+                    <div  class="column2">{{ item['qty'] }}</div>
+                    <div class="delete column2"><div (click)="DeleteProduct(item['name'], item['volume'])">Delete</div></div>
+                </div>
+            </div>
+
+            <div class="button">
+                <button class="glow-on-hover" type="button" (click)="BackButton()"><b>Back to Shopping</b></button>
+                <button class="glow-on-hover" type="button" (click)="Submit()"><b>Submit</b></button>
+            </div>
+        </div>
+
+        <div *ngIf="!cartType" class="empty">
+            <div class="cartlogo">
+                <img src="https://cdni.iconscout.com/illustration/premium/thumb/empty-cart-3613108-3020773.png?f=webp" alt="Empty Cart">
+            </div>
+            <div class="context">
+                <h1><strong>Your Cart is Empty</strong></h1>
+                <h3>Please add something to make me happy</h3>
+                <div class="btn">
+                    <button class="glow-on-hover" type="button" (click)="BackButton()"><b>Back to Shopping</b></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="contain" *ngIf="!temp">
+    <app-buyer-details (Buyer)="Sell($event)"></app-buyer-details>
+</div>

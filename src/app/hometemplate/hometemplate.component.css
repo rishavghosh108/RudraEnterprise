@@ -1,0 +1,75 @@
+.main{
+    display: flex;
+}
+.body{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    width: 100%;
+}.featurs{
+    position: relative;
+    left: 5%;
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    margin-top: 3.5%;
+    margin-left: 10%;
+}
+.plogo{
+    margin: 1%;
+}
+.plogo img{
+    height: 85px;
+    cursor: pointer;
+}
+.featurs div{
+    padding: 12px;
+    /* background-color: skyblue; */
+    font-size: 20px;
+    border: 2px solid #536493;
+    height: 20px;
+    border-radius: 7px;
+    text-align: center;
+    color: #536493;
+}
+.nice-button {
+    background: linear-gradient(130deg, #5fdfff, #feb47b);
+    border: 2px solid #388E3C; /* Add a subtle border */
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold; /* Make the text bold */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for hover effects */
+    cursor: pointer;
+}
+
+.nice-button:hover {
+    background: linear-gradient(135deg, #66BB6A 0%, #81C784 100%);
+    transform: translateY(-3px); /* Slight upward movement on hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.nice-button:active {
+    background: linear-gradient(135deg, #388E3C 0%, #4CAF50 100%);
+    transform: translateY(1px); /* Slight downward movement on click */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Slightly reduce shadow on click */
+}
+
+
+.button{
+    /* //cursor: pointer; */
+    padding: 12px;
+}
+.button:hover{
+    background: rgba(91, 210, 212, 0.5);
+}
+.profile{
+    position: absolute;
+    top: 15%;
+    right: 7%;
+    z-index: 10;
+}

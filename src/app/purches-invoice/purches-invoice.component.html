@@ -1,0 +1,32 @@
+<div class="invoice-card">
+  <div class="invoice-header">
+    <h4>
+      <label><i class="fas fa-calendar-alt"></i> Date:</label>
+      <span>{{ invoice.date | date : "mediumDate" }}</span>
+    </h4>
+    <h4>
+      <label><i class="fas fa-file-invoice"></i> Invoice No:</label>
+      <span>{{ invoice.id }}</span>
+    </h4>
+  </div>
+  <div class="invoice-body">
+    <div *ngFor="let product of invoice.products" class="product-detail">
+      <div class="product-name">
+        <label><i class="fas fa-box"></i> Product: </label>
+        <span> {{ product.product_name }}</span>
+      </div>
+      <div class="product-info">
+        <div></div><div></div>
+        <div class="info-item">
+          <label><i class="fas fa-balance-scale"></i> Quantity: </label>
+          <span> {{ product.qty }} {{ product.type }}</span>
+        </div>
+        <div class="info-item">
+          <label><i class="fas fa-tachometer-alt"></i> Volume: </label>
+          <span> {{ product.volume }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="buttondiv"><div class="button" (click)="exportToExcel()">Download</div></div>
+</div>

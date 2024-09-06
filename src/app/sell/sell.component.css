@@ -1,0 +1,192 @@
+.main{
+    height: 100vh;
+}
+.body{
+  margin-top:4%
+}
+/* Style for the header background */
+.thbg {
+  background: linear-gradient(90deg, #5fdfff, #feb47b);
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+/* Style for the header row */
+.th {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Style for the product name column */
+.name {
+  flex-basis: 30%;
+  padding-left: 5%;
+}
+
+/* Style for the other columns */
+.th div:nth-child(2), /* volume */
+.th div:nth-child(3), /* available quantity */
+.th div:nth-child(4), /* required quantity */
+.th div:nth-child(5)  /* empty for alignment */
+{
+  flex-basis: 20%;
+  text-align: center;
+}
+
+
+/* Style for the table row */
+.tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.tr:hover {
+  transform: translateY(-5px);
+}
+
+/* Style for the product name column */
+.tr div:nth-child(1) {
+  flex-basis: 30%;
+  font-weight: 600;
+  color: #333333;
+}
+
+/* Style for the volume and type column */
+.tr div:nth-child(2) {
+  flex-basis: 20%;
+  text-align: center;
+  color: #666666;
+}
+
+/* Style for the available quantity column */
+.tr div:nth-child(3) {
+  flex-basis: 15%;
+  text-align: center;
+  color: #999999;
+}
+
+/* Style for the input field */
+.tr div:nth-child(4) input[type="number"] {
+  width: 100px;
+  padding: 8px;
+  border: 2px solid #feb47b;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tr div:nth-child(4) input[type="number"]:focus{
+  border: 2px solid #5fdfff;
+  outline: none;
+}
+
+/* Hide spinner controls in the input field */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Style for the add button */
+.tr div:nth-child(5) button {
+  padding: 8px 15px;
+  background-color: #ff7e5f;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Disabled button style */
+.tr div:nth-child(5) button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Hover effect for the add button */
+.tr div:nth-child(5) button:not(:disabled):hover {
+  background-color: #feb47b;
+}
+
+.image-container {
+  position: relative;
+  width: 200px; /* Adjust width as needed */
+  height: 200px; /* Adjust height as needed */
+}
+
+#cart-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.cartbtn {
+  position: absolute;
+  bottom: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.swap {
+  align-items: center;
+  width: 160px;
+  height: 55px;
+  background: linear-gradient(130deg, #5fdfff, #feb47b);
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* transition: transform 0.3s ease, background 0.3s ease; */
+}
+
+.swap img {
+  cursor: pointer;
+  margin-left: 5.5px;
+  margin-top: 5px;
+  height: 43px;
+  width: 43px;
+  border-radius: 50%; /* Circle shape */
+  border: 2px solid white; /* White border for contrast */
+  transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+.swap img:hover{
+  transform: scale(1.09);
+}
+.swap:hover {
+  transform: scale(1.03); /* Slightly enlarge on hover */
+  background: linear-gradient(130deg, #feb47b, #5fdfff); /* Reverse gradient */
+}
+.background{
+  position: relative;
+  animation: slideIn 1s linear;
+  background: linear-gradient(90deg, #5fdfff, #feb47b);
+}
+@keyframes slideIn {
+  100%  { left:100px; top:0px;}
+}
+.products{
+  height: 58vh;
+  overflow-y: auto;
+}
+.name_value{
+  padding-left: 5%;
+}
+.second{
+  margin-top: 12%;
+}

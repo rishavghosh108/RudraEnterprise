@@ -1,0 +1,103 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.body {
+    background: rgba(95, 223, 255, 0.2); /* Slightly transparent background using preferred color */
+    backdrop-filter: blur(10px); /* Adds a blurred effect to the background */
+    padding: 40px;
+    border-radius: 15px;
+    color: #000; /* Black text color for better readability */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 25vw;
+}
+
+.body:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.form h2 {
+    margin-bottom: 30px;
+    color: #feb47b; /* Preferred theme color */
+    font-family: 'Poppins', sans-serif;
+}
+
+.form p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form label {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-size: 14px;
+    color: #5fdfff; /* Using theme color */
+    transition: all 0.3s ease;
+}
+
+.form input {
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #feb47b; /* Preferred theme color */
+    width: 100%;
+    padding: 8px 5px;
+    font-size: 17px;
+    color: #000; /* Black text color */
+    transition: border-color 0.3s ease;
+}
+
+.form input:focus {
+    border-color: #5fdfff; /* Focus color from theme */
+}
+
+.submit_button {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.submit_button button {
+    width: 120px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 20px;
+    background: linear-gradient(130deg, #5fdfff, #feb47b); /* Theme gradient */
+    border: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, color 0.3s;
+}
+
+.submit_button button:hover {
+    background: linear-gradient(130deg, #feb47b, #5fdfff); /* Inverted gradient on hover */
+    transform: translateY(-2px);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .body {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .submit_button button {
+        width: 100%;
+        font-size: 16px;
+    }
+}

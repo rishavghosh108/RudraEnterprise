@@ -1,0 +1,20 @@
+
+.footer {
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 1%;
+    color: black;
+}
+
+.logo{
+    left: 2%;
+    top: 2%;
+    position: absolute;
+    
+}
+.logo img{
+    height: 170px;
+    width: 200px;
+    border-radius: 150px;
+}

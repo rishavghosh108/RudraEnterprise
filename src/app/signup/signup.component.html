@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="signup.component.css">
+<app-logo></app-logo>
+<div class="main">
+    <div class="body">
+        <div class="logo"><img src="../../assets/profile.png" alt="profile logo"></div>
+        <form [formGroup]="signup" (ngSubmit)="Signup()" class="form">
+
+            <div class="section">
+                <div *ngIf="signup.get('name')?.invalid && signup.get('name')?.touched || name" class="span">Please enter your name</div>
+                <p>Fullname:&nbsp;&nbsp;</p>
+                <input type="text" formControlName="name" placeholder="Full name" autocomplete="current-name" [style.border-bottom-color]="signup.get('name')?.invalid && signup.get('name')?.touched || name ? 'red' : 'initial'" (input)="onInputChange_Name(signup.get('name')?.valid)">
+            </div>
+
+            <div class="section">
+                <div *ngIf="signup.get('mobile')?.invalid && signup.get('mobile')?.touched || mobile" class="span">Please enter a 10-digit mobile no</div>
+                <p>Username:&nbsp;&nbsp;</p>
+                <input type="number" formControlName="mobile" placeholder="Mobile no" autocomplete="current-mobile" [style.border-bottom-color]="signup.get('mobile')?.invalid && signup.get('mobile')?.touched || mobile ? 'red' : 'initial'" (input)="onInputChange_Mobile(signup.get('mobile')?.valid)">
+            </div>
+
+            <div class="section">
+                <div *ngIf="signup.get('password')?.invalid && signup.get('password')?.touched || password" class="span">Please enter a strong password</div>
+                <p>Password:&nbsp;&nbsp;</p>
+                <input type="password" formControlName="password" placeholder="Password" autocomplete="current-password" [style.border-bottom-color]="signup.get('password')?.invalid && signup.get('password')?.touched || password ? 'red' : 'initial'" (input)="onInputChange_Password(signup.get('password')?.valid)">
+            </div>
+
+            <div class="signup_button">
+                <button type="submit">Signup</button>
+            </div>
+        </form>
+        <div class="other">
+            <p (click)="SwitchToLogin()" class="switch">Already An User?</p>
+        </div>
+    </div>
+</div>

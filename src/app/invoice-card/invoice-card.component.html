@@ -1,0 +1,104 @@
+<app-hometemplate></app-hometemplate>
+<div class="body" *ngIf="!invoiceState">
+  <div class="card">
+    <div
+      class="products"
+      *ngFor="let transaction of transactions"
+      (click)="GetInvoice(transaction)"
+    >
+      <div class="card-header">
+        <h2>{{ transaction.name }}</h2>
+      </div>
+      <div class="card-body">
+        <div class="card-detail">
+          <label><i class="fas fa-phone-alt"></i> Mobile:</label>
+          <span>{{ transaction.mobile }}</span>
+        </div>
+        <div class="card-detail">
+          <label><i class="fas fa-user"></i> Transaction ID:</label>
+          <span>{{ transaction.id }}</span>
+        </div>
+        <div class="card-detail">
+          <label><i class="fas fa-calendar-alt"></i> Date:</label>
+          <span>{{ transaction.date | date : "medium" }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="body1" *ngIf="invoiceState">
+  <div id="invoice" class="invoice-card">
+    <div class="invoice-header">
+      <div class="logo">
+        <div class="img">
+          <img src="../../assets/logo.png" alt="logo" class="logo_img" />
+        </div>
+        <div class="heading">
+          <h1>INVOICE</h1>
+        </div>
+      </div>
+      <hr />
+      <div class="info">
+        <div class="invoice-details1">
+          <p class="client-name">Rudra Enterprise</p>
+          <p class="client-address">
+            Amral Shashpur Khandaghosh Purba Bardhaman<br />
+            Location, Amral<br />
+            852xx55
+          </p>
+        </div>
+        <div class="invoice-details">
+          <p><strong>Invoice To:</strong></p>
+          <p class="client-name">{{ invoice.name }}</p>
+          <p class="client-address">{{ invoice.mobile }}</p>
+          <p><strong>Date:</strong> {{ invoice.date | date : "mediumDate" }}</p>
+          <p><strong>Invoice #:</strong> {{ invoice.id }}</p>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="invoice-body">
+      <table>
+        <thead>
+          <tr>
+            <th>SL.</th>
+            <th>Item Description</th>
+            <th>Volume</th>
+            <th>Price</th>
+            <th>Qty.</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of invoice.products; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ product.product_name }}</td>
+            <td>{{ product.volume }} {{ product.type }}</td>
+            <td>{{ product.price | currency }}</td>
+            <td>{{ product.qty }}</td>
+            <td>{{ product.price * product.qty | currency }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="invoice-footer">
+      <div class="payment">
+        <p><strong>Sub Total:</strong> {{ invoice.subTotal | currency }}</p>
+        <p><strong>Tax:</strong> {{ invoice.tax | percent }}</p>
+        <p>
+          <strong>Total Payable:</strong> {{ invoice.grandTotal | currency }}
+        </p>
+      </div>
+      <div class="authorized-sign">
+        <p>Authorized Sign</p>
+      </div>
+    </div>
+  </div>
+  <div class="download">
+    <button (click)="downloadInvoice()">Download PDF</button>
+  </div>
+</div>

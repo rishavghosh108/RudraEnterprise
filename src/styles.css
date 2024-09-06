@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.green-snackbar {
+    background: none;
+    border: 1px solid greenyellow;
+    color: white;
+}
+.successful.mat-mdc-snack-bar-container {
+    --mdc-snackbar-container-color: none; 
+    --mdc-snackbar-supporting-text-color: #536493;
+    --mat-snack-bar-button-color: black;
+    border: 3px solid greenyellow;
+    border-radius: 5%;
+}
+
+
+.successful button {
+    background-color: greenyellow;
+    color: black !important;
+    border: none;
+}
+.error.mat-mdc-snack-bar-container {
+    --mdc-snackbar-container-color: none;
+    --mdc-snackbar-supporting-text-color: #536493;
+    --mat-snack-bar-button-color: black;
+    border: 3px solid red;
+    border-radius: 5%;
+}
+
+
+.error button {
+    background-color: #F44336;
+    color: white !important;
+    border: none;
+}

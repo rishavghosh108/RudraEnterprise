@@ -1,0 +1,21 @@
+<div class="main">
+    <div class="body">
+        <app-logo></app-logo>
+        <div class="featurs">
+            <div class="button" [class.nice-button]="home" (click)="Home()">Home</div>
+            <div class="button" [class.nice-button]="add" (click)="Add()">Add Products</div>
+            <div class="button" [class.nice-button]="buy" (click)="Buy()">Buy Products</div>
+            <div class="button" [class.nice-button]="sell" (click)="Sell()">Sell Products</div>
+            <div class="button" [class.nice-button]="filter" (click)="Filter()">Filter</div>
+            <div class="button" [class.nice-button]="parchase" (click)="Parchase()">parchase</div>
+            <div class="button" [class.nice-button]="sellhistory" (click)="Sellhistory()">sell history</div>
+        </div>
+
+        <div class="plogo">
+            <img src="../../assets/profile-1.png" alt="profile img" (click)="ShowProfile()">
+        </div>
+        <div class="profile" *ngIf="profile">
+            <app-profile></app-profile>
+        </div>
+    </div>
+</div>
