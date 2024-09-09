@@ -18,3 +18,11 @@
     width: 200px;
     border-radius: 150px;
 }
+
+
+@media (max-width: 600px) {
+    .logo{
+        height: 125px;
+        width: 150px;
+    }
+}
