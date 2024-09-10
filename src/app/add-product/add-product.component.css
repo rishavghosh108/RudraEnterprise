@@ -1,26 +1,33 @@
-.main{
-    display: flexbox;
+app-hometemplate{
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+.main {
+    display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-}
-.body {
+    height: 97.5vh;
+    width: 98.6vw;
+    padding: 10px;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.9); /* Lighten and make semi-transparent */
-    width: 400px;
+}
+
+.body {
+    background: rgba(255, 255, 255, 0.9); /*Light semi-transparent background*/
+    width: 100%;
+    max-width: 400px;
     padding: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Add shadow */
-    color: #333; /* Darker text color */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Shadow */
+    color: #333;
     border-left: 2px solid #feb47b;
     border-bottom: 2px solid #5fdfff;
+    transition: width 0.3s ease;
 }
 
 h1 {
@@ -34,11 +41,12 @@ input, mat-select {
     background: none;
     outline: none;
     border: none;
-    border-bottom: 2px solid #5fdfff; /* Use the theme color */
+    border-bottom: 2px solid #5fdfff;
     font-size: 18px;
     padding: 10px;
     color: #333;
     transition: border-color 0.3s ease;
+    width: 100%;
 }
 
 input:focus, mat-select:focus {
@@ -50,9 +58,9 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: left;
 }
-.button{
+
+.button {
     display: flex;
     justify-content: center;
 }
@@ -72,8 +80,6 @@ button {
 
 button:hover {
     background: linear-gradient(130deg, #feb47b, #5fdfff); /* Reverse gradient on hover */
-    color: white;
-    border: 1px solid #388E3C;
     transform: translateY(-3px); /* Slight lift on hover */
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
 }
@@ -81,4 +87,12 @@ button:hover {
 .mat-form-field {
     width: 100%;
     margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .main{
+        height: 97.5vh;
+        width: 95vw;
+    }
 }

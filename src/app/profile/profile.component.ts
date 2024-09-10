@@ -9,8 +9,8 @@ import { HttpHeaders } from '@angular/common/http';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-  name: string="rishav ghosh"
-  mobile: number=8609937193
+  name: string="";
+  mobile!: number;
 
   headers=new HttpHeaders(
     {'auth':this.auth.GetToken()}

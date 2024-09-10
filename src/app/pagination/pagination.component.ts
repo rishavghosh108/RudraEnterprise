@@ -20,7 +20,6 @@ export class PaginationComponent implements OnInit{
 
 
   ngOnInit(): void {
-    console.log(this.totalPages)
     const total=Math.ceil(this.totalPages/this.perPage)
     this.pages=Array.from({ length: total }, (_, i) => i + 1);
   }

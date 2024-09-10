@@ -55,9 +55,9 @@ transform: translateY(-5px);
 }
   
 
-/* .tr:hover {
-    background-color: rgba(95, 223, 255, 0.2); /* Light hover effect
-} */
+.tr:hover {
+    background-color: rgba(95, 223, 255, 0.2); /* Light hover effect*/
+}
 
 .column1 {
     width: 40%;
@@ -123,6 +123,10 @@ transform: translateY(-5px);
     0% { background-position: 0 0; }
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
+}
+
+.context{
+    position: relative;
 }
 
 .btn {

@@ -121,6 +121,10 @@ input[type=number]::-webkit-outer-spin-button {
   cursor: not-allowed;
 }
 
+.qty{
+  background-color: #ecc98c;
+}
+
 /* Hover effect for the add button */
 .tr div:nth-child(5) button:not(:disabled):hover {
   background-color: #feb47b;

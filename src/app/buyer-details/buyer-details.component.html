@@ -4,12 +4,14 @@
             <h2>Enter Your Details</h2>
             <p>
                 <label for="name">Full Name:</label>
-                <input type="text" id="name" placeholder="Full Name" formControlName="name">
+                <span  *ngIf="buyer.get('name')?.invalid && buyer.get('name')?.touched || name_error">enter a valid name</span>
+                <input type="text" id="name" placeholder="Full Name" formControlName="name" [style.border-bottom-color]="buyer.get('name')?.invalid && buyer.get('name')?.touched || name_error? 'red' : '#feb47b'"  (input)="onInputChange_Name(buyer.get('name')?.valid)">
             </p>
             <br>
             <p>
                 <label for="mobile">Mobile No:</label>
-                <input type="number" id="mobile" placeholder="Mobile No" formControlName="mobile">
+                <span  *ngIf="buyer.get('mobile')?.invalid && buyer.get('mobile')?.touched || mobile_error">enter a valid mobile no</span>
+                <input type="number" id="mobile" placeholder="Mobile No" formControlName="mobile" [style.border-bottom-color]="buyer.get('mobile')?.invalid && buyer.get('mobile')?.touched || mobile_error? 'red' : '#feb47b'" (input)="onInputChange_Mobile(buyer.get('mobile')?.valid)">
             </p>
             <div class="submit_button">
                 <button type="submit">Submit</button>

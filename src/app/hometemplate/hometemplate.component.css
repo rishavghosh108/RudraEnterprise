@@ -31,6 +31,7 @@
     border-radius: 7px;
     text-align: center;
     color: #536493;
+    cursor: pointer;
 }
 .nice-button {
     background: linear-gradient(130deg, #5fdfff, #feb47b);

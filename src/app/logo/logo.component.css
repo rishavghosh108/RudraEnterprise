@@ -20,9 +20,9 @@
 }
 
 
-@media (max-width: 600px) {
-    .logo{
-        height: 125px;
-        width: 150px;
+@media (max-width: 400px) {
+    .logo img{
+        height: 120px;
+        width: 145px;
     }
 }

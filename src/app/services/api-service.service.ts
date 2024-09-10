@@ -18,10 +18,11 @@ export class ApiServiceService {
   constructor(private http: HttpClient) {}
 
   otp_token: string='';
-  CartValueb:  {name:string,volume:number, type: string, qty:number}[] = [];
-  BuyValueb:  {id:number,volume:number,qty:number}[] = [];
-  CartValues:  {name:string,volume:number, type: string, qty:number}[] = [];
-  BuyValues:  {id:number,volume:number,qty:number}[] = [];
+
+  CartValueb:  {id: number, name:string, volume:number, type: string, qty:number}[] = [];  //buy component
+
+  CartValues:  {id: number, name:string, volume:number, type: string, qty:number}[] = []; //sell component
+
   products!: {id: number, product_name: string, type: 'qty' | 'gram' | 'ml'}[];
   allstocks=[];
 

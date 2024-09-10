@@ -1,6 +1,9 @@
+app-logo{
+    position: absolute;
+}
 /* General Styles */
 .main {
-    height: 100vh;
+    height: 97vh;
     display: flex;
     justify-content: center;
     align-items: center;

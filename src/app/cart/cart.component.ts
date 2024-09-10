@@ -3,87 +3,106 @@ import { ApiServiceService } from '../services/api-service.service';
 import { PopupService } from '../services/popup.service';
 import { HttpHeaders } from '@angular/common/http';
 import { AuthService } from '../services/auth.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnChanges{
+export class CartComponent implements OnChanges {
   @Output() backbutton = new EventEmitter<boolean>();
-  @Output() isSuccess = new EventEmitter<any>();
-  @Output() item=new EventEmitter<any>();
-  @Input() cartvalues:any;
-  @Input() buyvalues:any;
-  @Input() type:boolean=true;
+  @Input() type!: boolean;
 
-  headers=new HttpHeaders(
-    {'auth':this.auth.GetToken()}
-    )
+  temp: boolean = true;
+  cartType: boolean = false;
 
-  Sell($event: any){
+  cartvalues: { id: number, name: string, volume: number, type: string, qty: number }[] = []
 
-    const data={
-      products: this.api.BuyValues,
-      buyer: $event
-    }
-    
-    console.log(data);
-    
-    this.api.Sell(data,this.headers).subscribe(
-      (response)=>{
-        this.message.Successful(response.body['successful']);
-        setTimeout(() => {
-          this.BackButton();
-        }, 1000);
-        
-      },
-      (error)=>{
-        
-        this.message.Error(error.error['message'])
-        console.log(error)
-      })
-  }
+  headers = new HttpHeaders({ 'auth': this.auth.GetToken() })
 
-  BackButton(){
+  BackButton() {
     this.backbutton.emit(true);
   }
 
-  DeleteProduct(name:string,volume:number){
-    const item={name: name,volume: volume}
-    this.item.emit(item);
+  DeleteProduct(id: number, volume: number) {
+    this.cartvalues = this.cartvalues.filter(item => !(item.id === id && item.volume === volume))
+    if(this.type){
+      this.api.CartValueb = this.cartvalues
+    }else{
+      this.api.CartValues = this.cartvalues
+    }
   }
 
-  cartType:boolean=false; //false
 
-  constructor(private api: ApiServiceService, private message:PopupService, private auth:AuthService){}
+  constructor(private api: ApiServiceService, private message: PopupService, private auth: AuthService) { }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.cartType = this.buyvalues.length > 0 || this.cartvalues.length > 0;}
+    if (this.type)
+      this.cartvalues = this.api.CartValueb
+    else
+      this.cartvalues = this.api.CartValues
 
-  temp:boolean=true;
-
-  Change(){
-    this.temp=!this.temp;
+    this.cartType = this.cartvalues.length > 0;
   }
 
-  Submit(){
-    if(this.type){
-    this.api.Buy(this.buyvalues,this.headers).subscribe(
-      (response)=>{
-        this.message.Successful(response.body['successful']);
-        this.isSuccess.emit([]);
-        setTimeout(() => {
-          this.BackButton()
-        }, 3000);
-      },
-      (error)=>{
-        // this.message.Error(error.error['message']) multiple products
-        console.log(error)
-      }
-    )}else{
+  Change() {
+    this.temp = !this.temp;
+  }
+
+  Submit() {
+    const BuyProducts: { id: number, volume: number, qty: number }[] = [];
+    for (const product of this.cartvalues) {
+      const temp = { id: product.id, volume: product.volume, qty: product.qty }
+      BuyProducts.push(temp);
+    }
+
+    if (this.type) {
+      this.api.Buy(BuyProducts, this.headers).subscribe(
+        (response) => {
+          this.message.Successful(response.body['successful']);
+          this.cartType = false
+          this.api.CartValueb = []
+
+          setTimeout(() => {
+            this.BackButton()
+          }, 3000);
+        },
+        (error) => {
+          // this.message.Error(error.error['message']) multiple products
+          console.log(error)
+        })
+    } else {
       this.Change()
     }
+  }
+
+  Sell($event: any) {
+    const BuyProducts: { id: number, volume: number, qty: number }[] = [];
+    for (const product of this.cartvalues) {
+      const temp = { id: product.id, volume: product.volume, qty: product.qty }
+      BuyProducts.push(temp);
+    }
+
+    const data = {
+      buyer: $event,
+      products: BuyProducts
+    }
+
+    this.api.Sell(data, this.headers).subscribe(
+      (response) => {
+        this.message.Successful(response.body['successful']);
+        this.cartType = false
+        this.api.CartValueb = []
+        setTimeout(() => {
+          this.BackButton();
+        }, 1000);
+      },
+      (error) => {
+        this.message.Error(error.error['message'])
+        console.log(error)
+      }
+    )
   }
 
 }

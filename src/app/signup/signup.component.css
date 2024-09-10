@@ -1,6 +1,9 @@
+app-logo{
+    position: absolute;
+}
 /* General Styles */
 .main {
-    height: 100vh;
+    height: 97vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,7 +128,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* Media Queries for Responsive Design */
 @media (max-width: 600px) {
-    .body {
+   .body {
         width: 90%;
         height: auto;
         padding: 10px;

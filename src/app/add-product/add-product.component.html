@@ -1,33 +1,47 @@
+<app-hometemplate></app-hometemplate>
 <div class="main">
-    <app-hometemplate></app-hometemplate>
+  <div class="body">
+    <h1>Add New Products</h1>
 
-    <div class="body">
-      <h1>Add New Products</h1>
-  
-      <form [formGroup]="addproduct" (ngSubmit)="submit()">
-  
-          <mat-form-field appearance="fill">
-              <input matInput formControlName="product_name" placeholder="Product Name">
-              <mat-error *ngIf="addproduct.get('product_name')?.invalid && addproduct.get('product_name')?.touched||productname">
-                  Product Name is required
-              </mat-error>
-          </mat-form-field>
-  
-          <mat-form-field appearance="fill">
-              <mat-label>Measurement types</mat-label>
-              <mat-select formControlName="type">
-                  <mat-option *ngFor="let type of types" [value]="type.value">{{ type.viewValue }}</mat-option>
-              </mat-select>
-              <mat-error *ngIf="addproduct.get('type')?.invalid && addproduct.get('type')?.touched||selecedtype">
-                  Please select a type
-              </mat-error>
-          </mat-form-field>
-  
-          <div class="button">
-              <button mat-raised-button color="primary" type="submit">Submit</button>
-          </div>
-  
-      </form>
+    <form [formGroup]="addproduct" (ngSubmit)="submit()">
+      <mat-form-field appearance="fill">
+        <input
+          matInput
+          formControlName="product_name"
+          placeholder="Product Name"
+        />
+        <mat-error
+          *ngIf="
+            (addproduct.get('product_name')?.invalid &&
+              addproduct.get('product_name')?.touched) ||
+            productname
+          "
+        >
+          Product Name is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Measurement types</mat-label>
+        <mat-select formControlName="type">
+          <mat-option *ngFor="let type of types" [value]="type.value">{{
+            type.viewValue
+          }}</mat-option>
+        </mat-select>
+        <mat-error
+          *ngIf="
+            (addproduct.get('type')?.invalid &&
+              addproduct.get('type')?.touched) ||
+            selecedtype
+          "
+        >
+          Please select a type
+        </mat-error>
+      </mat-form-field>
+
+      <div class="button">
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </div>
+    </form>
   </div>
-  
-</div> 
+</div>

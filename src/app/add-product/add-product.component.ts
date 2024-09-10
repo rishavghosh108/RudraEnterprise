@@ -47,7 +47,6 @@ export class AddProductComponent implements OnInit{
 
   submit(): void{    //this method is for add the product to cart
     if(this.addproduct.valid){
-      console.log(this.addproduct.value)
       this.apiService.AddProduct(this.addproduct.value, this.headers).subscribe(
         (response)=>{
           this.status.Successful(response.body['successful'])

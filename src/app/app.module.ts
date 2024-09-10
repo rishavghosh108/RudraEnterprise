@@ -39,6 +39,7 @@ import { BuyingCardComponent } from './buying-card/buying-card.component';
 import { SellingCardComponent } from './selling-card/selling-card.component';
 import { InvoiceCardComponent } from './invoice-card/invoice-card.component';
 import { PurchesInvoiceComponent } from './purches-invoice/purches-invoice.component';
+import { MobileComponent } from './mobile/mobile.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { PurchesInvoiceComponent } from './purches-invoice/purches-invoice.compo
     BuyingCardComponent,
     SellingCardComponent,
     InvoiceCardComponent,
-    PurchesInvoiceComponent
+    PurchesInvoiceComponent,
+    MobileComponent
   ],
   imports: [
     BrowserModule,

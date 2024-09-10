@@ -1,3 +1,7 @@
-<body>
+<body *ngIf="!isMobile">
     <router-outlet></router-outlet>
 </body>
+
+<div *ngIf="isMobile">
+    <app-mobile></app-mobile>
+</div>

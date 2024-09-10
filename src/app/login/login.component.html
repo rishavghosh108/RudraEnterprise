@@ -17,7 +17,7 @@
             <div class="section">
                 <div *ngIf="Login.get('password')?.invalid && Login.get('password')?.touched||password" class="span">please enter a strong password</div>
                 <p>Password: &nbsp;&nbsp;</p>
-                <input type="password" placeholder="Password" autocomplete="current-password" formControlName="password"   [style.border-bottom-color]="Login.get('password')?.invalid && Login.get('password')?.touched||password? 'red' : 'initial'" (input)="onInputChange_Password(Login.get('password')?.valid)">
+                <input type="password" placeholder="Password" autocomplete="current-password" formControlName="password"  [style.border-bottom-color]="Login.get('password')?.invalid && Login.get('password')?.touched||password? 'red' : 'initial'" (input)="onInputChange_Password(Login.get('password')?.valid)">
             </div>
 
             <div class="login_button">
